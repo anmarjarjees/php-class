@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* 
+    Using the CSS3 trick 
+    to include the borders and the paddings with element width :-)
+    */
+    box-sizing: border-box;
+}
+
+body {
+    /* Testing: */
+    /* background-color: yellowgreen; */
+    background-color: rgb(129, 75, 8);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+div.wrapper {
+    max-width: 1200px; 
+    padding: 10px;
+    margin: auto;
+    background-color: rgb(245, 228, 207);
+}
+
+footer {
+  background-color: #705B5B;
+  color: #E3D5D5;
+  margin-top: 5px;
+  padding: 3px 0;
+  text-align: center;
+}
+
+ul {
+    margin-left: 15px;    
+}
+
+ul li {
+    padding-left: 10px;
+}
+
+form div {
+    margin: 10px 0;
+}
+
+.warning {
+    background-color: #ffff00;
+    color: #610505;
+    font-weight: bold;
+}
+
+.success {
+    background-color: #c9fac9;
+    color: #023b02;
+    font-weight: bold; 
+}
+
+#delete-form div input  {
+   background-color: #c0c0c0; 
+   color: #444343; 
+}
+
+form button a {
+    text-decoration: none;
+    color: #000;
+}
+
+form input[type="submit"], form input[type="reset"] {
+    cursor: pointer;
+}
+/* We will skip the media queries to focus on PHP coding */

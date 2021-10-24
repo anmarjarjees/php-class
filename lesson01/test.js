@@ -1,0 +1,1 @@
+// can contain only pure JS code

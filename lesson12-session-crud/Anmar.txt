@@ -1,0 +1,8 @@
+- A simple demo of database driven website
+- This application is focusing on using using session with MySQL database
+- We are using PDO API
+- The database sql code is written inside "login.sql"
+- This will be a review of using PHP classes
+- We have a file named "Database.php"
+As PHP programmers, we use Capital for the first letter
+as this file is only a class with the same name "Database.php

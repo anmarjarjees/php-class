@@ -1,0 +1,7 @@
+This folder about learning the essential tools and commands to work with PDO.
+PDO => PHP Database Object
+
+The introduction of using CRUD with PHP and MySQL database
+
+First Thing: connecting our PHP application with our database
+We should create a separate file just for connecting
