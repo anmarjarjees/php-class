@@ -12,13 +12,24 @@ we are printing/outputting HTML contents like: h1, p, br, hr, etc
 before or outside the HTML Template! No Valid
 Just for learning purpose
  -->
+
 <?php
+/*
+We usually place PHP code at the top of the page before the HTML code.
+Any variable has to have $ as the first char.
+$camelCase like JavaScript except with $
+*/
+
 // Data Types in PHP: number, string, boolean
 /*
-- number = integer (whole number) or floating (decimal)
+- number = PHP works with two different types of numbers:
+    - integer (whole number) 
+    - floating (decimal)
 example: 5 is an integer, 7.5 is a floating number
+
 - string = text (characters)
 example: "Here is my text" or 'Here is my text' (Like JS, we can wrap our text with ' or ")
+
 - boolean: either true or false
 example: true or false
 
@@ -29,12 +40,13 @@ Read more: https://www.w3schools.com/php/php_datatypes.asp
 // Variables: A temporary location in the RAM to save any value while the program/website/web application is running
 /*
 In JS (I use JS for JavaScript):
-var firstName = "Tony";
-let firstName = "Tony";
+var firstName = "Alex";
+let firstName = "Alex";
 */
-$firstName = "Tony"; // must be end with ; and no need to declare variable type or using any keyword like "var" or "let" in JS
+$firstName = "Alex"; // must be end with ; and no need to declare variable type or using any keyword like "var" or "let" in JS
 $lastName = 'Tonies';
 
+// bad example of a variable name:
 $middleName = 65; // it's not a good idea => we should name our variable wisely 
 $age = 65; // it makes sense to us to use meaningful variable names
 $total = 55.72; // number can have decimal point using point but not comma
@@ -45,7 +57,7 @@ $avg = 25.67;
 // document.write(firstName + "<br>");
 
 /*
-in PHP we have 2 built-in functions:
+in PHP we have 2 built-in functions to output data:
 > echo() 
 > print() 
 both can be used to output our data:
@@ -55,7 +67,7 @@ In php, we use the dot to concatenate text and variables
 In the future we will use print_r() to print array values
 */
 // In JS: document.write(firstName + "<br>");
-echo( $firstName . "<br>" );
+echo($firstName . "<br>");
 print($lastName . "<br>" ); // the same result like echo
 
 // In JS: document.write(firstName + " " + lastName); 
@@ -91,6 +103,14 @@ echo "<br>", $firstName, " ", $age;
 // In PHP:
 echo "<br>" . $firstName . " " . $age;
 echo '<h2>'.$firstName.'</h2>';
+
+/* checking the difference between using ' or " with echo */
+echo 'the age is $age <br>'; // with single quote
+echo "the age is $age <br>"; // with double quote
+/*
+Single quote will treat the variable name as a literal text while double quote will give us the value of that variable	
+*/
+
 /*
 In JS:
 let result;
@@ -108,6 +128,21 @@ $total;
 $avg;
 $middleName;
 
+/*
+Logical/Boolean Variables: has a boolean value of either true or false
+- TRUE or true (but not "TRUE")
+- FALSE or true
+*/
+$x = false;
+echo "the value of x is $x"; // because x is false there will be nothing just empty!
+echo "<br>";
+
+$y = true;
+echo "the value of y is $y"; // because y is true we will see number 1
+
+echo "<hr>";
+echo "<br>";
+
 // Task1: Declare 3 variables with any names you want:
 /*
 first variable has the value of "HTML and CSS"
@@ -119,11 +154,25 @@ $subject1 = "HTML and CSS"; // in PHP string value either use " or ' like JS
 $subject2 = "JavaScript";
 $subject3 = "PHP";
 
+
+/*
+for testing: we will use a built-in function to give us the type of the variable
+*/
+echo gettype( $subject1 ) . '<br>'; // string
+echo gettype( $x ) . '<br>'; // boolean
+echo gettype( $y ) . '<br>'; // boolean
+echo gettype( $age ) . '<br>'; // integer
+echo gettype( $total ) . '<br>'; // double
+
+echo "myVar1 value is: $myVar1 <br>"; // True means 1
+echo "myVar2 value is: $myVar2"; // False nothing to display
+
 /*
 Casting in PHP - Good to know :-)
 Read more: https://www.php.net/manual/en/language.types.type-juggling.php#language.types.typecasting
 */
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,7 +188,9 @@ Read more: https://www.php.net/manual/en/language.types.type-juggling.php#langua
 
     <!-- Below is our PHP script inside the body element -->
     <?php
-        // we can write our PHP code
+        // we can write our PHP code and using simple math as with Java and JavaScript:
+        // PEDMAS Rule like in JavaScript (Math rule)
+        // Math will be discussed in details later
         $x = 6;
         $y = 7;
         $avg = ( $x + $y ) / 2;
@@ -153,15 +204,22 @@ Read more: https://www.php.net/manual/en/language.types.type-juggling.php#langua
     -->
 
     <!-- 
-        The output of this code: Hello, Tony. your age is
+        The output of this code: Hello, Alex. your age is
         which is a very common mistake is forgetting to add echo/print to output the value of any varaible 
     -->
-    <p>Hello, Tony. your age is <?php $age; ?></p>
+    <p>Hello, Alex. your age is <?php $age; ?></p>
+    
+    <!-- Or using any other element like h2 -->
+    <h2><?php echo 'PHP inside HTML elements' ?></h2>
 
     <!-- 
-        The output of this code: Hello, Tony. your age is 65 (so we have to use either echo or print) 
+        The output of this code: Hello, Alex. your age is 65 (so we have to use either echo or print) 
     -->
-    <p>Hello, Tony. your age is <?php echo $age; ?></p>
+    <p>Hello, Alex. your age is <?php echo $age; ?></p>
+
+    <!-- more examples: --> 
+    <p>Today is <?php echo date('M j, Y'); ?></p>
+    <p>Today is <?php echo date ("M j, Y"); ?></p>
 
     <!--
         Task1:
@@ -193,6 +251,30 @@ Read more: https://www.php.net/manual/en/language.types.type-juggling.php#langua
         <li><?php echo $subject3 ?></li>
     </ul>
     <hr>
+
+    <!-- 
+    Task3:
+    Use <table> element to display the contents: 
+    Just for quick testing: using an obsolete (deprecated) attribute "border" below:
+    -->
+    <table border="1">
+        <tr>
+            <td>Student Name</td>
+            <!-- use php code to echo the value of the first name -->
+            <td><?php echo $firstName; ?></td>
+        </tr>
+        <tr> 
+            <!-- use php code to echo the value of the current module -->
+            <td>Module</td>
+            <td><?php echo $subject3; ?></td>
+        </tr>
+        <tr>
+            <td>Final Average</td>
+            <!-- use php code to echo the value of the college name -->
+            <td><?php echo $avg; ?></td>
+        </tr>
+    </table>
+
     <script>
         // Our Normal JavaScript Code (For Example):
         let firstName="Alex";

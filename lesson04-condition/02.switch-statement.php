@@ -12,9 +12,36 @@
     no need for HTML 5 template
 -->
 <?php
-// We are hard coding the value of variable "fruit" to be "dates"
+// We are hard coding the value of variable "grade" to be "G"
 // We learn in the future how to get the user input
-$fruit = "orange";
+$grade = "G";
+/*
+We need to check the grade:
+grade value is A ==> type "Well Done"
+B ==> type "Above Average"
+C ==> type "Average"
+D ==> type "Below Average"
+F ==> type "Try again"
+*/
+
+// using if for review:
+if ( $grade == "A" ) {
+  echo "Well Done";
+} else if ( $grade == "B" ) {
+  echo "Above Average";
+} else if ( $grade == "C" ) {
+  echo "Average";
+} else if ( $grade == "D" ) {
+  echo "Below Average";
+} else if ( $grade == "F" ) {
+  echo "Try Again";
+} else {
+  echo "Invalid Grade";
+}
+echo "<hr>";
+
+// Now we will write the same logic but with switch statement:
+
 /*
 In JS:
 switch ( myVariable ) {
@@ -36,6 +63,43 @@ switch ( myVariable ) {
 }
 */
 
+/*
+switch( variable that we need to check) {
+	case value1:
+	  	write the code for this case
+		break (if we don't want the next case to run)
+	case value2:
+		write the code for this case
+		break
+	case value3:
+		write the code for this case
+		break
+	and so on for the rest of the values
+}
+*/
+
+switch ( $grade ) {
+  // Don't forget that any text value has to be inside ' or "
+  case 'A': // in case if $grade is A
+    echo "Well Done";
+    break; // if we don't want php to jump to the next case(s)
+  case 'B':
+    echo "Above Average";
+    break;
+  case 'C':
+    echo "Average";
+    break;
+  case 'D':
+    echo "Below Average";
+    break;
+  case 'F':
+    echo "Try Again";
+    break;
+  default: // is like the last else statement in if condition
+    echo "Invalid Grade!";
+}
+
+$fruit = "orange";
 switch ( $fruit ) {
     // in case if the value of $fruit is "orange"then run the code of this case:
     case 'orange': // with text values => we use either " or '
@@ -58,7 +122,6 @@ switch ( $fruit ) {
 echo "<hr>";
 
 $courseName = "Animate";
-
 switch ($courseName) {
     case 'PHP':
         echo '<p>Now we are studying PHP</p>';

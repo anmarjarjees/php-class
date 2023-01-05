@@ -1,5 +1,5 @@
 <?php
-// my php code to handle the form can be written here 
+// our entire php code to handle the form can be written here 
 // we can place our code here instead of using another/external php file
 // In this example, we used the php file "form-process.php" to receive the form submission
 ?>
@@ -15,6 +15,11 @@
 <body>
     <!-- 
     To recap/review to what we have covered in HTML and CSS module:
+
+    HTML <form> element:
+    Every form should have the following two main types of attributes:
+           - action
+           - method
 
     method attribute values:
     - GET
@@ -47,7 +52,7 @@
     In our example it will be "the file" on the server (localhost server) 
     to handle the form request. 
 
-    The file that contains the script/code for handling the form is written in a programming language like:
+    The file that contains the code for handling the form, it is written in a programming language like:
     - PHP (the most popular web programming language - our current module)
     - C#
     - JAVA

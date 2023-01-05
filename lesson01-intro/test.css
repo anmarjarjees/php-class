@@ -1,0 +1,14 @@
+/* can contain only pure CSS code */
+/* the symbol * means all the elements		*/
+* {
+    color: darkred;
+    background-color: lightyellow;
+}
+
+table tr td.e {
+    background-color: lightblue;
+}
+
+table tr td.v {
+    background-color: lightgreen;
+}

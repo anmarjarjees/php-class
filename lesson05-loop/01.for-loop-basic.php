@@ -1,4 +1,11 @@
 <?php
+// print from 1 to 10:
+echo "1<br>"; // in HTML <br>
+echo "2<br>";
+echo "3<br>";
+echo "4<br>";
+// and so on till 10... Bad idea!!!
+
 /*
 for loop structure:
 for (part1; part2; part3) {
@@ -32,7 +39,18 @@ for ($loopCounter = 1; $loopCounter <= 10; $loopCounter++) {
 
 echo "<hr>";
 // A simple loop to print 10 to 1:
+// We can just use "i" as the loop counter variable (iteration)
 for ($i = 10; $i >= 1; $i--) {
+  echo "<br>$i";
+}
+
+echo "<hr>";
+// Task: write a for loop to print only the even numbers only from 0 to 10
+// for short we will create a simple variable like $i
+// 0 then +2 => 2 then +2 => 4 then +2 =>6
+// so we can NOT use $i++ in the increment
+// we can write: $i=$i+2 OR $i+=2
+for ( $i = 0; $i <= 10; $i += 2 ) {
   echo "<br>$i";
 }
 

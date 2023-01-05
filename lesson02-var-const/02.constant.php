@@ -1,6 +1,14 @@
 <?php
 // only php code, no html content in this file
 
+/* 
+Variable:
+$myNumber=10;
+$myNumber=7;
+$myNumber=5;
+We can always change the variable's value
+*/
+
 $myBook="Learning JavaScript";
 $myBook='Learning PHP'; // in PHP using ' is more common
 echo "$myBook<br>"; // Learning PHP
@@ -28,22 +36,27 @@ The syntax: define("The Constant Name","The Constant Value")
 You can read more:
 - https://www.tutorialrepublic.com/php-tutorial/php-constants.php
 - https://www.w3schools.com/php/php_constants.asp
+
+Constant:
+- Constant name should be written in UPPERCASE (by convention)
+- Constant name has no $
+- We use define() built-in function to create it
 */
 
 // Task: 
-// create a constant to hold the text value of "Canadian Business College" 
+// create a constant to hold the text value of "ABC Advanced Technology" 
 // Pick any meaningful name for this constant
 
 // The naming convention is to create a php constant with all uppercase (better but not mandatory) 
 // constant name has to be in between ' or "
-define('COLLEGE','Canadian Business College');
+define('COLLEGE','ABC Advanced Technology');
 
 // then just echo the value of COLLEGE:
 echo "<br>";
 echo COLLEGE;
 
 echo "<br>COLLEGE"; // Notice that php will treat it as a literal text
-// we will the see the word "COLLEGE" instead of its value "Canadian Business College"
+// we will the see the word "COLLEGE" instead of its value "ABC Advanced Technology"
 
 // OR we can write the <br> + COLLEGE in just one echo statement:
 echo "<br>".COLLEGE; // placing our constant outside the "" will give us its value

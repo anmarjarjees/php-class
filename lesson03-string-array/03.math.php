@@ -35,6 +35,10 @@
      echo "<br>The average is: $avg";
 
     // Modulo division symbol % (The remainder of division)
+    /* 
+    Based on math, the remainder of dividing any even number by 2 is always 0. 
+    So this can be a good way to test if the number is even or odd 
+    */
     $result2 = 5 % 2; // = 1 ==> Modulo division ==> the result 1, it is odd (number=5)
     
     $result3 = 4 % 2; // = 0 ==> Modulo division ==> the result 0, it is even (number=4)

@@ -34,16 +34,29 @@
     <title>Welcome to PHP</title>
     <!-- Below is the opening/closing style tags for writing our CSS -->
     <style>
-        p {
-            color: green;
-        }
+        * {
+    color: darkred;
+    background-color: lightyellow;
+    }
+
+    table tr td.e {
+        background-color: lightblue;
+    }
+
+    table tr td.v {
+        background-color: lightgreen;
+    }
     </style>
 </head>
 <body>
     <h1>PHP Language</h1>
     <p>Learning PHP for the first time!</p>
     <p>Yes, the file extension is .php, but we can add HTML with internal CSS and JavaScript</p>
-        <!-- below is our opening/closing script tags to write JS: -->
+    <p>We can write HTML, CSS, JavaScript code inside a PHP file</p>
+        <!-- 
+            Review: we can use <script> to write our JavaScript code
+            below is our opening/closing script tags to write JS: 
+        -->
     <script>
 		// our JS code
 
@@ -56,3 +69,13 @@
     </script>
 </body>
 </html>
+<!--	
+NOTE:
+We can test this .php file using any browser by typing the full path:
+
+http://localhost/main-php/lesson01/first-page.php
+
+if we just type "http://localhost/main-php/" this will take us to the root folder that we have created for our module then we can choose any lecture or project folder
+
+Notice that we can type the protocol "http://" or just ignore it because any browser will add it to the url automatically
+-->

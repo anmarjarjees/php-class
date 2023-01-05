@@ -1,14 +1,4 @@
 <?php
-// boolean value is either true or false
-$x = false;
-echo "the value of x is $x"; // because x is false there will be nothing just empty!
-echo "<br>";
-
-$y = true;
-echo "the value of y is $y"; // because y is true we will see number 1
-
-echo "<hr>";
-echo "<br>";
 // if condition in PHP like JS
 /*
     if (condition) {
@@ -16,6 +6,19 @@ echo "<br>";
     } else {
         my code if the condition is false
     }
+*/
+
+/*
+Conditional statements operators are the same as "JS"
+The comparison operators:
+== both values are equal " 1 =='1' ==> true
+=== both values are identical (same value and same data type) 1==='1' ==> false
+!== the values are NOT identical
+>= greater or equal to
+<= less than or equal to
+>
+<
+!= not equal to
 */
 $booleanValue = false; // change it true/false
 if ($booleanValue) {
@@ -133,17 +136,62 @@ if ( $isLegalAge >= 18 ) {
   echo "Sorry, you can't buy fireworks";
 }
 
+// if (the remainder of dividing this number by 2 is 0) => even
+if ( $myNumber % 2 == 0 ) {
+    echo "<p>Even Number</p>";
+  } else {
+    echo "<p>Odd Number</p>";
+  }
+
+
+// Thee variables:
+$exam1 = 80;
+$exam2 = 82;
+$exam3 = 88;
+
+// Task 1: Create a variable to find the average for the three exams then display it in the browser:
+$average = ( $exam1 + $exam2 + $exam3 ) / 3; // Just the average formula without rounding the result
+
 /*
-Conditional statements operators are the same as "JS"
-The comparison operators:
-== both values are equal " 1 =='1' ==> true
-=== both values are identical (same value and same data type) 1==='1' ==> false
-!== the values are NOT identical
->=
-<=
->
-<
+The round() function rounds a floating-point number.
+basic use: round(number,precision);
+
+Example: 
+round(85.975, 2) ==> 85.98
+so:
+85.975 is the number that we need to round
+2 is how many digits we want after the .
+
+In our task the number that we need to round is the $average value
+The answer: round($average,2)
 */
+
+// first way: we can use the function round at the beginning:
+$average = round( ( $exam1 + $exam2 + $exam3 ) / 3, 2 );
+
+// second way:
+$average = round( $average, 2 );
+/*
+The right side rounded $average variable is assigned to the left side $average variable
+
+Like:
+$a=2;
+a=a*2; => a will be 4
+*/
+echo "<br>The average for $exam1, $exam2, and $exam3 is: $average<br>";
+
+// third way:
+// notice that we can not include function inside the double quotes
+echo "<br>The average for $exam1, $exam2, and $exam3 is: " . round( $average, 2 ) . "<br>";
+/*
+Task: if the average is greater/equal to 60 ==> display "Well done"
+else display "Try again"
+*/
+if ( $average >= 60 ) {
+    echo "<p>Well Done!</p>";
+  } else {
+    echo "<p>Try again</p>";
+}
 
 /*
 If we have multiple conditions, we can use elseif block:
@@ -169,9 +217,32 @@ if ( $currentModule == 'JS' ) {
 
 /*
 logical operators (also the same like JS :-) ):
-&& => AND
-|| => OR
-! => NOT
+AND ==> &&
+OR ==> ||
+NOT ==> !
+*/
+
+/*
+With the logical operators we need to use following
+table. This table is called "Truth Table"
+		
+OR: 
+LEFT-HAND SIDE OR RIGHT-HAND-SIDE ==> BOOLEAN RESULT
+TRUE OR TRUE ==> TRUE
+TRUE OR FALSE ==> TRUE
+FALSE OR TRUE ==> TRUE
+FALSE OR FALSE ==> FALSE
+		
+AND:
+LEFT-HAND SIDE AND RIGHT-HAND-SIDE ==> BOOLEAN RESULT
+TRUE AND TRUE ==> TRUE
+TRUE AND FALSE ==> FALSE
+FALSE AND TRUE ==> FALSE
+FALSE AND FALSE ==> FALSE
+		
+NOT:
+NOT TRUE (!TRUE) ==> FALSE
+NOT FALSE (!FALSE) ==> TRUE
 */
 
 echo "<hr>";
@@ -205,7 +276,6 @@ That's "elseif" is more commonly used than "else if"
 
 // Example of using the normal way with { and } and using the PHP unique way with ":" and "endif" 
 echo "<hr>";
-$average = 92;
 
 /*
 The logic (algorithm):

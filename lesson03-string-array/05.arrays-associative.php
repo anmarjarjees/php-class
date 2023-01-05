@@ -4,12 +4,13 @@
     // Indexed Array (we did the same in JavaScript)
     // Associative Array
 
-    // Indexed Array: 
-    // -------------
+    // Indexed Array Review: 
+    // --------------------
     // 1. Each element/item in the array has a unique numeric id or value called "index"
     // 2. The first index value is 0 (counting from 0 not from 1) for the first element/item in the array
     $myLuckyNumbers = [ 90, 34, 17, 21, 12 ];
     
+    // Associative Array:
     /*
         php.net: Associative Array
         An array can be created using the array() language construct.
@@ -40,7 +41,7 @@
 
         // Creating an associative array using way#1: array()
         /*
-        in our CBC:
+        A list of courses, each with its classroom number:
         APA Program going to class# 7
         DMWD Program going to class# 8
         MDM Program going to class# 13
@@ -59,6 +60,7 @@
         var_dump($classroomNumbers);
 
         // Creating an associative array using way#2: [ ]
+        // a list of modules
         $modules = [
             "module1" => "HTML and CSS",
             "module2" => "JavaScript",
@@ -66,6 +68,7 @@
         ];
 
         // More Examples:
+        // a list of descriptions
         $descriptions = array(
             'HTML' => 'Display the page content',
             'CSS' => 'Style the page content',
@@ -147,6 +150,8 @@
         Yes we can simply just write: $officeApps = ["Word","PowerPoint","Excel","Access"];
 
         The keys of this associative array are integer values starting from 0
+
+        Don't forget => In PHP we can use either single quote or double quotes with text
         */
         $officeApps = [
             0 => "Word",
@@ -167,7 +172,16 @@
         // Let's try to output "Word":
         echo "<p>".$officeApps[0]."</p>";
 
-
+        /*
+        Task: create an associative array "grades"
+        Keys are: 'A' 'B' 'C' 'D' 'F'
+        Values are for each key: 
+        - Well done
+        - Above Average
+        - Average
+        - Below Average
+        - Try again
+        */
 
     ?>
 

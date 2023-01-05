@@ -1,15 +1,17 @@
 <?php
 // if you only want to learn and focus on PHP language
 // you can ignore the HTML5 template page!
-// but we add it here for more demo and learning purposes
+// but we just added it here for more demo and learning purposes
 
     // Creating variables for saving 3 users' full names:
+    // Each variable can hold only value 
     $user1 = 'Arthur Smith';
     $user2 = 'Alex Chow';
     $user3 = 'Sarah Grayson';
 
     // Instead of creating 3 variables for saving the 3 full names
     // We can save them all into on variable using the concept of "Arrays"
+    // Array variable can hold multiple values
     
     // Using Arrays in PHP:
     // Two types of arrays:
@@ -24,6 +26,10 @@
     // Array: is a variable that can have/contains multiple values
     $users = array('Arthur Smith','Alex Chow','Sarah Grayson'); // the traditional way for creating an array in PHP
     /*
+    So we list the array values as comma separated values, and because this array "$users" contains text so each text value has to be written inside either ' or "
+    */
+
+    /*
     In JS:
     var users = new Array('Arthur Smith','Alex Chow','Sarah Grayson');
     OR:
@@ -34,6 +40,8 @@
     // $users = ['Arthur Smith','Alex Chow','Sarah Grayson'];
 
     // More Examples:
+    $employees = [ 'Sam Simpson', 'Martin Smith', 'Alex Chow' ];
+
     $myLuckyNumbers = [ 90, 34, 17, 21, 12 ]; // In JS: let myLuckyNumbers = [ 90, 34, 17, 21, 12 ]; 
     /*
     In PHP, echo/print are used to print strings
@@ -47,9 +55,9 @@
     // Yes, we can use for loop to loop through the array elements (to be discussed later...)
     // We need to output the array temporary just for testing (by us as programmers):
     
-    // we can use the built-in function print_r() (is used with arrays):
-    // Prints human-readable information about a variable
-    // display the array's values and the array's indexes
+    // we can use the built-in function print_r() [is used with arrays]:
+    // prints human-readable information about a variable
+    // displays the array's values and the array's indexes
     echo "<hr>";
     print_r($users);
     /*
@@ -129,7 +137,11 @@
     // for testing, we can user either print_r() or var_dump()
     print_r( $users ); // display all the values
     echo "<hr>";
+
     // More Examples :-)
+    /*
+    Like JS, in PHP we can create an empty array to be populated later:
+    */
     // Creating an empty array named "myExams" first
     // then populate the array with any numbers:
 
@@ -189,7 +201,6 @@
     We can use many PHP built-in functions with arrays:
     https://www.tutorialrepublic.com/php-reference/php-array-functions.php
     */
-
 ?>
 
 <!DOCTYPE html>

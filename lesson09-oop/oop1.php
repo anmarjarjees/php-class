@@ -52,7 +52,7 @@ So each user/member has his/her own list of info (data) saved in our system
 // Class name should start with upper case or using UpperCamel case "it's a good practice"
 
 /* 
-Below are examples of the recommended and not recomended way to name our classes in PHP:
+Below are examples of the recommended and not recommended way to name our classes in PHP:
 class Address {} // OK
 class PhysicalAddress {} // OK
 class Physical_Address {} // OK

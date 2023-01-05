@@ -1,4 +1,4 @@
-# php-class
+# php-class (Main PHP)
 My PHP code for the module "Introduction to PHP with MySQL" for Web Development Students
 
 # Introduction to Server-Side Programming with PHP and MySQL
@@ -16,5 +16,5 @@ Please refer to my pdf lecture files for PHP full installation and SQL commands
 - TutorialRepublic.com
 - My code examples
 
-NOTE: Other New Folders to be added...
+NOTE: Updates, New files, and New Folders to be added...
 
