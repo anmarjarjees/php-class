@@ -1,3 +1,4 @@
+<!-- NOTE: This file is intended to be used with/by 01.simple-from1.php -->
 <?php
 // The pure php code for handling the form after being submitted:
 // We can add the full HTML contents here or we can just use PHP

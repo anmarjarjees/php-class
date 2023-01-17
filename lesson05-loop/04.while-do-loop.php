@@ -161,12 +161,49 @@ password = m123456
 
 for (record=1; record<1000; record++) {
     if (username and password are both exists and valid) {
-        break our loop =< "break"
+        break our loop => "break"
         direct the user to the member home page, for example
     }
 }
 */
 
+// While-do-While with arrays:
+$myExams = [ 90, 85, 72, 91, 83 ];
+// 5 elements (max index: 4)
 
+/*
+while (condition only) {
+    lines of code
+  }
+*/
+	$j = 0; // part 1 of for loop
+	while ( $j < count( $myExams ) ) {
+		echo "<br> $myExams[$j]";
+		// notice we have to increment the loop counter at the end
+		$j++; // part 3 of for loop: do not forget the increment/decrement => Infinite loop
+	}
 
+	echo "<hr>";
+	// do while loop:
+	// print the same array myExams
+	/*
+	do {	
+	  // our code
+	} while (condition)
+	*/
 
+	// we need here to initialize the do/while counter:
+	// this counter will represent the array index
+	$k = 0;
+	do {
+		// printing the current value of index $k
+		// $k=0 ==> echo the first element 
+		// $k=1 ==> echo the second element 
+		// $k=2 ==> echo the third element and so on...
+		echo "<br> $myExams[$k]";
+		$k++; // Please DON'T forget to increment the loop counter
+	} while ( $k < count( $myExams ) )
+	/*
+	Don't forget that With "Do/While" the loop will run at least one time even if the condition is false, then the condition will be checked at the end of the loop
+	*/
+?>

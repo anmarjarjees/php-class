@@ -4,13 +4,17 @@
 // I want to write my php code here below:
 
 
-/* NOTE:**********************************************
-The PHP script for handling the form  can be added at the top of the HTML page,
-in such case we need use if statement to test whether the form has been submitted or no.
+/* 
+IMPORTANT NOTE:
+***************
+The PHP script (code) for handling the form can be added at the top of the HTML page,
+in such case we do need to use if statement to test whether the form has been submitted or no.
+
+In other word, we have to stop the form code from being executed unless if the user has filled and submitted the form, so we need to add if condition to check if the form is submitted then run its related php code
 // ***************************************************/
 
 // Just for testing => output a simple text:
-// echo "Da! da! you submitted the from! Congratulation!";
+// echo "submitted the from";
 // echo "<hr>";
 // Above is the issue that we need to fix (very easy to fix):
 // We need to use if condition to check if the submit button is clicked => it means the form is submitted
@@ -98,8 +102,10 @@ if ($_POST) { // Since we used method="POST" => $_POST has some data => TRUE
     we can simply submit the form to the same page (our php code is written in the same page at the top)
     [As you will do in your second assignment (no need to create a separate file!)]
     
-    Three options/solutions
-    Option 1: action = "" => it will submit the form to the same page (Not recommended with HTML5)*
+    Three options/solutions or three possible values for "action" attribute:
+    ************************************************************************
+    Option 1: action = "" 
+    => it will submit the form to the same page (Not recommended with HTML5)*
     * Yes, it works fine with PHP, but not with HTML5 validation
     * Note: In html5, the action attribute MUST always have a value!
     * HTML5 validation will complaint about having the attribute "action" without any value
@@ -109,7 +115,7 @@ if ($_POST) { // Since we used method="POST" => $_POST has some data => TRUE
     in our example, the file name is 02.simple-form2.php
     so the action value will be: action="02.simple-form2.php"
 
-    Option 3: (ideal choice): 
+    Option 3: (ideal choice): action = $_SERVER['PHP_SELF']
     remember the super global array $_SERVER contains all the information about the server
     and the current file!
 

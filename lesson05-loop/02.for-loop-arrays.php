@@ -68,6 +68,49 @@ for ( $i = 0; $i <= 10; $i += 2 ) {
 }
 
 echo "<hr>";
+/*
+Creating an array for program codes:
+*/
+$allSubjectsCode = [ 890, 100, 500, 750, 200, 250,300 ];
+
+// Task: for loop to display its element
+for ( $i=0 ; $i < count($allSubjectsCode) ; $i++  ) {
+  echo $allSubjectsCode[$i]."<br>";
+}
+
+/*
+Let's suppose we need to create another new array
+that contains all the subject code value that are more than 300
+
+in other words, the new array will have all the values that
+are more than 300 from $allSubjectsCode array
+*/
+// let's name the new array to be "HighSubjectsCode":
+$highSubjectsCode = [];
+
+// now we can use the  for loop to scan each value in $allSubjectsCode:
+
+/*
+in JS we used to work on length property of an array object
+
+in PHP we can use a built-in function (method) named "count()"
+example:
+
+count(arrayName) ==> 7
+*/
+// we need to loop through the main first array
+// count($allSubjectsCode) ==> 
+for ($i=0; $i<count($allSubjectsCode); $i++) {
+	if ($allSubjectsCode[$i]>300) {
+		// we will populate the values of the second array on the fly
+		$highSubjectsCode[]=$allSubjectsCode[$i];
+	}
+}
+
+// to print the result array:
+print_r($highSubjectsCode);
+echo "<hr>";
+
 // Let's try to create 2 Dim array and loop through its item as we did in JS just for learning:
     // Another example of two dimensional array:
     $officeApps = [

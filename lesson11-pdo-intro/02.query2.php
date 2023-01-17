@@ -17,7 +17,7 @@ $query will be the variable that contains the "Result Set"
 // we can use fetch() method for our object that contains the result set => $query
 // we will pass the argument "PDO::FETCH_ASSOC"
 // fetch() can return one row/record at time
-$row1 = $query->fetch(PDO::FETCH_ASSOC); // returns the frist record/row => running for the first time
+$row1 = $query->fetch(PDO::FETCH_ASSOC); // returns the first record/row => running for the first time
 print_r($row1);
 echo "<br><br>";
 

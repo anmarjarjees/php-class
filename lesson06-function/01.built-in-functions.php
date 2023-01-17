@@ -1,5 +1,17 @@
+<!-- Just pure PHP code on need for HTML in this file: -->
 <?php
-// Just pure PHP code on need for HTML in this file:
+/*
+in PHP we used some useful built-in functions:
+examples:
+count() ==> to count the array element
+strlen() ==> to count the number of characters
+*/
+$days = [ 'Mon', 'Tue', 'Wed' ];
+echo count( $days ) . "<br>"; // 3 elements in this array
+
+$subject = "JavaScript";
+echo strlen( $subject ) . "<br>"; // 10 Characters in JavaScript
+
 // Gets the current PHP version
 phpversion(); // just returns which version is running in the server (or our computers - localhost);
 // this function will NOT output anything => just returns a text "string data type"

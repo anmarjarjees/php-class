@@ -16,9 +16,9 @@ we have to use: $_GET[]
 
 In our example:
 $_POST[
-'numbers' => the value that user will input for the field with name="numbers",
-'operation'=> the value (Radio button) that user will check,
-'submit' => value when the user clicks the submit button,
+  'numbers' => the value that user will input for the field with name="numbers",
+  'operation'=> the value (Radio button) that user will check,
+  'submit' => value when the user clicks the submit button,
 ]
 */
 

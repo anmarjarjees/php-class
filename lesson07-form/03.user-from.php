@@ -84,11 +84,17 @@ Since we have all the form elements saved into the $_POST[] array
 including the submit button that has name="submit";
 We can test if the submit button is clicked or not clicked by testing $_POST['submit']
 
-php has a built-in function named "isset()":
-isset() function ==> return 1 if it's true (the variable has a value) ==> handle the form
-isset() function ==> empty it's false ==> skip this code
+PHP has a built-in function named "isset()":
+isset() function => checks whether a variable has a value or not!
+> isset() => return 1 if it's true (the variable has a value) => we can handle the form
+> isset() => return empty it's false ==> skip this code
 */
 
+/*
+Since we have all the form elements saved into the $_POST[] array 
+including the submit button that has the attribute: name="submit"
+We can test if the submit button is clicked or not using $_POST['submit']
+*/
 // if $_POST array of the 'submit' key has a value => the form is submitted
 if (isset($_POST['submit'])) {
     // We do need to start working with the from elements after the submission
@@ -97,6 +103,23 @@ if (isset($_POST['submit'])) {
     echo "Wow! you submitted the form, finally!" ; 
     
     // Start by getting the user input:
+    /*
+        Since the form is using post method, so all the values of the form elements that have name attributes will be saved into the
+        $_POST[] array.
+
+        $_POST[] ==> is an associative array
+
+        using "Associative Array: ('key'=>'value')
+        $_POST[
+            'first-name' => 'whatever the user will type',
+            'last-name' => 'whatever the user will type',
+            'email' => 'whatever the user will type',
+            'address' => 'whatever the user will type',
+            'city' => 'whatever the user will type',
+            'province' => 'whatever the user will type'
+            'membership' => 'whatever the user will select'
+        ]
+    */
     // We can use the same $_POST[] array to access each value for every form field
     // Or we can assign the value of each element in $_POST[] to a simple PHP variable:
     $fName = $_POST['first-name'];
@@ -117,6 +140,35 @@ if (isset($_POST['submit'])) {
     echo "<p>City: $city</p>";
     echo "<p>Province: $province</p>";
     echo "<p>Membership Type: $membership</p>";
+    /*
+    We can place the membership name in the "value" attribute for html from element
+    so instead of value="pm" we can put the full word value="Premium"
+
+    but for simple HTML code, we used pm, sm, bm
+	We can use if condition to display the full official titles:
+	*/
+    if ( $membership = "pm" ) {
+        echo "<p>Membership Type: Premium</p>";
+    } else if ( $membership = "sm" ) {
+        echo "<p>Membership Type: Standard </p>";
+    } else {
+        echo "<p>Membership Type: Basic</p>";
+    }
+    echo "<hr>";
+      
+    // Task: the other solution using switch case statement:
+    switch ( $membership ) {
+        case "pm":
+            echo "<p>Membership Type: Premium</p>";
+        break;
+        
+        case "sm":
+            echo "<p>Membership Type: Premium</p>";
+        break;
+        
+        default:
+            echo "<p>Membership Type: Premium</p>";
+    } // end switch
     echo "<hr>";
 
     // Now if we don't use other PHP variables for each key, we can just access the $_POST
@@ -141,19 +193,20 @@ Please be advised that we don't put any PHP code to handle the form outside the 
     <title>User Info Form</title>
 </head>
 <body>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <!--
-        In order for PHP to be able to take the values of all the form
-        elements (controls), each form element has to have the "name" 
-        attribute with a unique value.
-
+    <!--      
         Note:
-        You can write "POST" or "post" or "GET" or "get"
+        You can write POST or post or GET or get using Capital is more common
 
         Notice that since we are going to submit the form to the same page 
         because we placed all the PHP code to handle the form at the 
         top within the same file "03.user-form.php",
-        so in such case you can the proper way which to echo $_SERVER['PHP_SELF']    
+        so in such case you can use the proper way which to echo $_SERVER['PHP_SELF']    
+    -->
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        <!-- 
+        In order for PHP to be able to take the values of all the form
+        elements (controls), each form element has to have the "name" 
+        attribute with a unique value.
         -->
         <div> 
             First Name:
@@ -187,7 +240,9 @@ Please be advised that we don't put any PHP code to handle the form outside the 
         
         <div> 
             Membership: <br>
-            <!-- At least one item and only one item should be selected in radio buttons -->
+            <!-- 
+                At least one item and only one item should be selected in radio buttons
+            -->
             <input type="radio" name="membership" checked value="pm">
             Premium Membership <br>
             <input type="radio" name="membership" value="sm">
@@ -196,7 +251,7 @@ Please be advised that we don't put any PHP code to handle the form outside the 
             Basic Membership </div>
         <br>
         <div> 
-            <!-- 
+       <!-- 
         Very Important Note:
         with PHP we do need to have the input type to be:
         input="submit" instead of input="button"
@@ -204,7 +259,7 @@ Please be advised that we don't put any PHP code to handle the form outside the 
         <input type="button"> does not automatically submit the form, you need to use JavaScript to submit it
         -->
             <input type="submit" value="Submit" name="submit">
-            <!-- 
+        <!-- 
         No need to add "name" attribute for reset button
         because this button is just for clearing the form
         Even if we add name="reset", PHP will ignore it

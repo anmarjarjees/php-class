@@ -7,8 +7,14 @@ function functionName() {
 */
 
 
-// Step1: Create our first function
-// This function needs to accept any number of minutes and return the number of hours
+// Create our first function to convert number of minutes to number of hours
+/*
+This function:
+- needs to accept any number of minutes and return the number of hours
+- has one parameter to represent the number in minutes, we can call it "$minutes" 
+Parameter(s): is one or more variables separated with commas in the function definition
+- can perform an action and then give us the result back, this "giving the result back" is called returning. If we need the function to return a value, we use "return" statement.
+*/
 /*
 	The rule: 1 Hour = 60 minutes
 	As a general rule, dividing your number of minutes by 60 will give you the same time in hours.
@@ -20,6 +26,8 @@ function functionName() {
 
 // Let's name it "convertMinToHr'" => Convert Min To Hour
 // This function has one parameter which is "minutes" to accept the numeric value of an argument for the minutes
+
+// Step1: Create our function
 function convertMinToHr($minutes) {
     $hours = $minutes / 60;
     /*
@@ -31,6 +39,13 @@ function convertMinToHr($minutes) {
     // functions can be used to print/echo the result or return it:
     // echo "<br>the hours: $hours"; // echo the $hours
     return $hours;
+    /*
+    NOTE:
+	Like any other programming language, return statement has two actions:
+	- return a value to the main script
+	- terminate (stop) the function, so any code we place/write after this statement
+     will be ignored
+	*/
 }
 
 // Step2: Then we need to call our function:
@@ -45,7 +60,28 @@ echo "<br> the hours for 200 min: " . convertMinToHr( 200 ); // $hours = 200 / 6
 
 
 // Example for converting LB to KG function as you did in JavaScript :-)
-// Create our function first:
+/*
+    Task:  like "Google" :-), create 2 functions:
+    - to convert LB to KG
+    - to convert KG to LB
+
+    The equations:
+    m ==> mass
+
+    The official formulas:
+    **********************
+    1. To find the lb value:
+    m(lb) = m(kg) / 0.45359237
+    OR The formula: KG Value = Pound Value x 0.45359237
+
+    2. To find the kg value:
+    m(kg) = m(lb) × 0.45359237
+
+    we can use the formulas above as we did with JS
+    or we can use the formulas for an approximate result
+*/
+// Create our function first => convert lb to kg:
+// this function accepts one value
 function convertLbToKg( $pound ) {
     // Google: Formula for an approximate result, divide the mass value by 2.205
     $Kilogram = $pound / 2.205;
@@ -56,6 +92,47 @@ function convertLbToKg( $pound ) {
   echo "<br>" . convertLbToKg( 26 );
   echo "<br>" . convertLbToKg( 30 );
 
+  /* 
+  Task: converting KG to LB function
+  Google: Formula for an approximate result, divide the mass value by 2.205
+  */
+
+/*
+Task: Create a function named "circleArea()" to find the area of any circle
+
+In geometry, the area enclosed by a circle of radius r is π r2. 
+
+so in other words, the Math formula to find the area for any circle: 
+Area = PI * (radius value*radius value)
+PI value is approximately equal to 3.14159
+
+for example:
+if the radius value of a circle is 8:
+Area = 3.14159 * 8 * 8 
+Area = 201.06
+
+This function doesn't print or display anything, just return the value to the main script
+*/
+function circleArea( $radius ) {
+    // the first way of coding:
+    /*
+    $area = 3.14159 * $radius * $radius;
+    return $area;
+    */
+  
+    // the second way of coding:
+    /*
+    or we can just combine the two lines in one line only so need to save the result of the formula into a variable then return the variable, we can just return the formula itself:
+    */
+    return 3.14159 * $radius * $radius;
+  }
+
+  /*
+Below we are just hard coding the value of the circle radius to 4, but later we will use HTML form to let the user inserting any value
+*/
+$radius = 4;
+echo "<br>The area of a circle with radius of $radius is approximately: " . circleArea( $radius );
+  
 // more advanced examples:
 /*
 Task: Create a function that takes any list of numbers and return the total of these numbers:
@@ -96,7 +173,6 @@ for ( $i = 1; $i < count( $numbers ); $i++ ) {
 }
 echo "<br>My third total is: $arrayTotal";
 
-
 // I want to find the total again for these two arrays:
 $myExams = [ 89, 78, 90, 91, 85 ];
 $myBookPrices = [ 45.74, 34.72, 32.12, 24.89 ];
@@ -125,52 +201,75 @@ echo "<br>The total price for my books is: $total";
 // then we can call our function x numbers of times
 // this function supposed to find the total for any array we declare and pass to the function:
 // Yes, we do need to have an array already created
-function arrayTotal($anyArray) {
+/*
+Create a function named "getArrayTotal()" this function:
+- accepts (needs) ONLY ONE argument of array type (one parameter)
+- action1: is loop through the array of prices and find the total of all of them
+- action2: returns the total value to the main program
+*/
+function getArrayTotal($anyArray) {
+    /*
+    the parameter "$anyArray" is just a local variable for this function block 
+    it works like a template to be replaced with any array in the main script
+    */
+
+    /* 
+    the variable "$total" is the container to add the values of the array
+	we need to start with 0 to make sure it's empty
+	then we can add values to that container "total" 
+    */
     $total = 0; // reset the variable named "total" to 0
     for ( $i = 0; $i < count( $anyArray ); $i++ ) {
         // the new total will be equal to the previous total + the current element's value:
 	    // new total = previous total + the current element in the array:
         $total = $total + $anyArray[ $i ]; // will run for i=0 to i=4
+        
+        // Or use the this one:
+        // $total += $anyArray[ $index ];
     }
     // remember this function will return the value of the total (Not printing it)
     return $total;
+    /* 
+    Do NOT forget that the "return" statement terminate (stop) the function,
+    for this reason we CAN NOT place the return statement inside the loop
+    */
 }
 
 // calling our function:
-// arrayTotal(); // Error: Missing argument 1 for arrayTotal()
+// getArrayTotal(); // Error: Missing argument 1 for getArrayTotal()
 /*
-Warning: Missing argument 1 for arrayTotal()
+Warning: Missing argument 1 for getArrayTotal()
 Notice: Undefined variable: anyArray
 */
 
 // NOTE: The following 3 lines of calling our function 3 times will not display
 // 1. Calling our function and passing the argument => our first array $numbers
-arrayTotal($numbers);
+getArrayTotal($numbers);
 // 2. Calling our function and passing the argument => our second array $myExams
-arrayTotal($myExams);
+getArrayTotal($myExams);
 // 3. Calling our function and passing the argument => our third array $myBookPrices
-arrayTotal($myBookPrices);
+getArrayTotal($myBookPrices);
 
 
 // We need to echo the returned value of each time we call our function:
 echo "<hr>";
 // call our function: we just need to echo the function for each array:
 // 1.find the total for my "$numbers" array:
-echo "<br> the total of my numbers is: ".arrayTotal($numbers);
+echo "<br> the total of my numbers is: ".getArrayTotal($numbers);
 
 // 2.find the total for my "myExams" array:
-echo "<br> the total of my exam is: ".arrayTotal($myExams);
+echo "<br> the total of my exam is: ".getArrayTotal($myExams);
 
 // 3.find the total for my "$myBookPrices" array:
-echo "<br> the total of my book prices is: ".arrayTotal($myBookPrices);
+echo "<br> the total of my book prices is: ".getArrayTotal($myBookPrices);
 
 
 // Or using this way by creating 3 different variables for each array:
 // Or since our function is returning a value (the total)
 // we can assign this returned value into a variable named "result1":
-$result1=arrayTotal($numbers);
-$result2=arrayTotal($myExams);
-$result3=arrayTotal($myBookPrices);
+$result1=getArrayTotal($numbers);
+$result2=getArrayTotal($myExams);
+$result3=getArrayTotal($myBookPrices);
 
 // Echo the three variables
 echo "<br>the total of my numbers is $result1";
@@ -179,16 +278,16 @@ echo "<br>the total of my numbers is $result3";
 
 
 // Or just using one varaible "result":
-$result=arrayTotal($numbers);
+$result=getArrayTotal($numbers);
 echo "<br>the total of my numbers is $result";
-$result=arrayTotal($myExams);
+$result=getArrayTotal($myExams);
 echo "<br>the total of my numbers is $result";
-$result=arrayTotal($myBookPrices);
+$result=getArrayTotal($myBookPrices);
 echo "<br>the total of my numbers is $result";
 
 
 // Again the same code:
-$examTotal=arrayTotal($myExams);
+$examTotal=getArrayTotal($myExams);
 // now since we have the value for the exam total
 // we can find the average:
 // average formula: the total of numbers / how many numbers
@@ -199,7 +298,7 @@ echo "<br>The final average for my exams is: $average"; // The final average for
 
 // In the assignment1 - part2:
 // This function supposed to return the result of multiplying all the numbers inside any array
-// so this function like our previous function "arrayTotal()" also needs to have an array as parameter
+// so this function like our previous function "getArrayTotal()" also needs to have an array as parameter
 function multiplyArrayValues($anyArray) {
     // we can can write our logic and run our for loop against the varaible "anyArray"
     // finding the result of multiplying all the numbers

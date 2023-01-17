@@ -57,6 +57,7 @@
 
     echo "<br>";
     $myNumericValue1 = 10;
+    // $myNumericValue1 = $myNumericValue1  +1;
     $myNumericValue1++; // This will add only 1 to 10 => 11
     echo $myNumericValue1;
     echo "<br>";

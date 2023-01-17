@@ -46,8 +46,10 @@
 
     Action attribute: 
     This attribute tells the browser where to send the data
-    which could be the address of the file that contains the script/code 
-    for handling the data either by sending it using email or save it to the database
+    which could be the address of the file on the server that contains the script/code 
+    for handling the data either by sending it using email or save it to the database for example
+
+    if using Apache with XAMPP => so the server will be the same "localhost"
 
     In our example it will be "the file" on the server (localhost server) 
     to handle the form request. 
@@ -110,11 +112,11 @@
             wether we use $_GET[] or $_POST[]
 
 
-            With forms, PHP provides for us 2 Global Associative Arrays:
+            With forms, PHP provides for us 2 Global Associative Arrays to handle the form elements:
             -> $_POST[] => we have to use/access/call the associative array $_POST[]
-            if our method="POST"
+            if the form method="POST"
             -> $_GET[]  => we have to use/access/call the associative array $_GET[]
-            if our method="GET"
+            if the form method="GET"
 
             Our current form field(s):	5 input fields and 1 textarea field.
             The 4 input fields (elements):

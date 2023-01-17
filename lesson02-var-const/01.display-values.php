@@ -52,6 +52,7 @@ $age = 65; // it makes sense to us to use meaningful variable names
 $total = 55.72; // number can have decimal point using point but not comma
 $avg = 25.67;
 
+$isValid = true; // Boolean
 
 // In JS, to output anything to our page:
 // document.write(firstName + "<br>");
